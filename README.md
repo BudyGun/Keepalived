@@ -98,7 +98,7 @@ global_defs {
 }
 
 rrp_script check_script {
-      script "/home/vboxuser/keepalived/script.sh"
+      script "/home/vboxuser2/keepalived/script.sh"
       interval 3
 }
 
@@ -114,6 +114,18 @@ vrrp_instance www {
         }
 }
 ```
+
+Скрипт файла script.sh
+```
+#!/bin/bash
+if [[ $(netstat -tuln | grep LISTEN | grep :80) ]] && [[ -f /var/www/html/index.html ]]; then
+        exit 0
+else
+        sudo systemctl stop keepalived
+fi
+```
+
+
 
 
 
