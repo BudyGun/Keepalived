@@ -62,6 +62,8 @@
 ![1](https://github.com/BudyGun/Keepalived/blob/main/img/k1.png)
 ![1](https://github.com/BudyGun/Keepalived/blob/main/img/k2.png)
 
+Выбрал виртуальный ip-адрес - 192.168.1.250
+
 Конфигурационный файл /etc/keepalived/keepalived.conf первого сервера со статусом MASTER и приоритетом 255:
 
 ```
@@ -83,10 +85,6 @@ vrrp_instance www {
 
         virtual_ipaddress {
              192.168.1.250/24
-        }
-
-        track_script {
-                   check_script
         }
 }
 ```
@@ -125,6 +123,16 @@ else
 fi
 ```
 
+Запускаю keepalived сервис на обоих серверах и захожу на виртуальный адрес 192.168.1.250. Вижу страничку с мастер сервера 1. При этом статус второго сервера - Backup.
+
+![1](https://github.com/BudyGun/Keepalived/blob/main/img/k10.png)
+![1](https://github.com/BudyGun/Keepalived/blob/main/img/k11.png)
+
+Отключаю keepalived сервис на первом сервере мастер, вижу что страничка грузится со второго сервера:
+![1](https://github.com/BudyGun/Keepalived/blob/main/img/k12.png)
+
+при этом второй сервер становится мастер:
+![1](https://github.com/BudyGun/Keepalived/blob/main/img/k13.png)
 
 
 
