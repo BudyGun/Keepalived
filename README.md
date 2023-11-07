@@ -61,3 +61,32 @@
 
 ![1](https://github.com/BudyGun/Keepalived/blob/main/img/k1.png)
 ![1](https://github.com/BudyGun/Keepalived/blob/main/img/k2.png)
+
+Конфигурационный файл /etc/keepalived/keepalived.conf первого сервера со статусом MASTER и приоритетом 255:
+
+```
+global_defs {
+    enable_script_security
+}
+
+vrrp_script check_script {
+      script "/home/vboxuser/keepalived/script.sh"
+      interval 3
+}
+
+vrrp_instance www {
+        state MASTER
+        interface enp0s3
+        virtual_router_id 4
+        priority 255
+        advert_int 1
+
+        virtual_ipaddress {
+             192.168.1.250/24
+        }
+
+        track_script {
+                   check_script
+        }
+}
+```
