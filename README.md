@@ -90,3 +90,32 @@ vrrp_instance www {
         }
 }
 ```
+
+Конфигурационный файл /etc/keepalived/keepalived.conf второго сервера со статусом BACKUP и приоритетом 200:
+```
+global_defs {
+    enable_script_security
+}
+
+rrp_script check_script {
+      script "/home/vboxuser/keepalived/script.sh"
+      interval 3
+}
+
+vrrp_instance www {
+        state BACKUP
+        interface enp0s3
+        virtual_router_id 4
+        priority 200
+        advert_int 1
+
+        virtual_ipaddress {
+              192.168.1.250/24
+        }
+}
+```
+
+
+
+
+
