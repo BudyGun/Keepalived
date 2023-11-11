@@ -44,9 +44,12 @@
 
 ### Решение 1
 
-![1](https://github.com/BudyGun/Keepalived/blob/main/img/pkt1.png)
-![1](https://github.com/BudyGun/Keepalived/blob/main/img/pkt2.png)
-![1](https://github.com/BudyGun/Keepalived/blob/main/img/pkt3.png)
+![1](https://github.com/BudyGun/Keepalived/blob/main/img/pkt 1.png)
+![1](https://github.com/BudyGun/Keepalived/blob/main/img/pkt 2.png)
+![1](https://github.com/BudyGun/Keepalived/blob/main/img/pkt 3.png)
+
+файл проекта pkt
+![1](https://github.com/BudyGun/Keepalived/blob/main/img/pkt 3.png)
 
 
 
