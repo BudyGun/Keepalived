@@ -49,7 +49,7 @@
 ![1](https://github.com/BudyGun/Keepalived/blob/main/img/pkt 3.png)
 
 файл проекта pkt
-![1](https://github.com/BudyGun/Keepalived/blob/main/img/pkt 3.png)
+![1](https://github.com/BudyGun/Keepalived/blob/main/img/hsrp_advanced-chumakov.pkt)
 
 
 
